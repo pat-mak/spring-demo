@@ -2,8 +2,8 @@
 version: 2
 plan:
   project-key: PT
-  key: PLAIN
-  name: Plain1
+  key: ND
+  name: 2nd
 stages:
 - Default Stage:
     manual: false
@@ -12,10 +12,20 @@ stages:
     - Default Job
 Default Job:
   key: JOB1
+  other:
+    all-other-apps:
+      custom.test.ephemeral.agent.enabled: 'false'
+  tasks:
+  - checkout:
+      force-clean-build: false
+      description: Checkout Default Repository
   artifact-subscriptions: []
-repositories: []
-# Remove line above if want to set repository with YAML file as primary repository of plan
-triggers: []
+repositories:
+- pat-mak2:
+    scope: global
+triggers:
+- polling:
+    period: '180'
 branches:
   create: manually
   delete: never
@@ -32,7 +42,7 @@ other:
 ---
 version: 2
 plan:
-  key: PT-PLAIN
+  key: PT-ND
 plan-permissions:
 - users:
   - admin
