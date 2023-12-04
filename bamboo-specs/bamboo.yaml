@@ -1,7 +1,7 @@
 ---
 version: 2
 plan:
-  project-key: PT
+  project-key: PT2
   key: ND
   name: 2nd
 stages:
