@@ -42,7 +42,7 @@ other:
 ---
 version: 2
 plan:
-  key: PT-ND
+  key: PT2-PLAIN22
 plan-permissions:
 - users:
   - admin
