@@ -1,3 +1,4 @@
+create: manually
 ---
 version: 2
 plan:
@@ -5,27 +6,20 @@ plan:
   key: GH
   name: GitHub
 stages:
-- Default Stage:
-    manual: false
-    final: false
-    jobs:
-    - Default Job
+  - Default Stage:
+      manual: false
+      final: false
+      jobs:
+        - Default Job
 Default Job:
   key: JOB1
   other:
     all-other-apps:
       custom.test.ephemeral.agent.enabled: 'false'
-  tasks:
-  - checkout:
-      force-clean-build: false
-      description: Checkout Default Repository
   artifact-subscriptions: []
-repositories:
-- pat-mak2:
-    scope: global
-triggers:
-- polling:
-    period: '180'
+repositories: []
+# Remove line above if want to set repository with YAML file as primary repository of plan
+triggers: []
 branches:
   create: manually
   delete: never
@@ -44,13 +38,14 @@ version: 2
 plan:
   key: BUG-GH
 plan-permissions:
-- users:
-  - admin
-  permissions:
-  - view
-  - edit
-  - build
-  - clone
-  - admin
-  - view-configuration
+  - users:
+      - admin
+    permissions:
+      - view
+      - edit
+      - build
+      - clone
+      - admin
+      - view-configuration
 ...
+
