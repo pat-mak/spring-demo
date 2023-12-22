@@ -1,9 +1,9 @@
 ---
 version: 2
 plan:
-  project-key: PT2
-  key: ND
-  name: 2nd
+  project-key: BUG
+  key: GH
+  name: GitHub
 stages:
 - Default Stage:
     manual: false
@@ -42,7 +42,7 @@ other:
 ---
 version: 2
 plan:
-  key: PT2-PLAIN22
+  key: BUG-GH
 plan-permissions:
 - users:
   - admin
