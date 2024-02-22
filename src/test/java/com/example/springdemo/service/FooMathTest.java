@@ -11,4 +11,9 @@ class FooMathTest {
             FooMath fooMath = new FooMath();
             assertEquals(5, fooMath.add(2, 3));
         }
+        @Test
+        void subtract() {
+            FooMath fooMath = new FooMath();
+            assertEquals(1, fooMath.subtract(3, 2));
+        }
 }
