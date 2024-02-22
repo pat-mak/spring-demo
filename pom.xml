@@ -56,6 +56,11 @@
                     </excludes>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>com.atlassian.maven.plugins</groupId>
+                <artifactId>clover-maven-plugin</artifactId>
+                <version>4.1.10.1</version>
+            </plugin>
         </plugins>
     </build>
 
